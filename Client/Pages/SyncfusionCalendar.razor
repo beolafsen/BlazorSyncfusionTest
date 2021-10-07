@@ -1,7 +1,25 @@
 ﻿@page "/syncfusionCalendar"
+@using Syncfusion.Blazor.Calendars
 
-<h1>Syncfusion test</h1>
-
-<p>This component demonstrates Syncfusion</p>
-
-<SfCalendar TValue="DateTime"></SfCalendar>
+<div class="control-section">
+    <div id="calender-control">
+        <SfCalendar TValue="DateTime?" @bind-Value="@SelectedDate"></SfCalendar>
+    </div>
+    <div id="display-date">
+        <span>Selected value: @(SelectedDate?.ToString("M/d/yyyy"))</span>
+    </div>
+</div>
+<style>
+    #calender-control {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    #display-date {
+        max-width: 300px;
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+</style>
+@code {
+    public DateTime? SelectedDate { get; set; } = DateTime.Now;
+}
