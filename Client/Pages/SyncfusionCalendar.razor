@@ -6,7 +6,7 @@
         <SfCalendar TValue="DateTime?" @bind-Value="@SelectedDate"></SfCalendar>
     </div>
     <div id="display-date">
-        <span>Selected value: @(SelectedDate?.ToString("M/d/yyyy"))</span>
+        <span>Selected value: @(SelectedDate?.ToShortDateString())</span>
     </div>
 </div>
 <style>
